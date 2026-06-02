@@ -11,7 +11,16 @@ import { defineConfig, devices } from '@playwright/test';
 /**
  * See https://playwright.dev/docs/test-configuration.
  */
+
+
 export default defineConfig({
+
+
+   reporter: [
+    ['html', { open: 'never' }], // 'never' prevents CI from hanging by trying to open a browser
+    ['github']                   // Provides native annotations on the GitHub UI
+  ],
+  
   testDir: './tests',
   /* Run tests in files in parallel */
   fullyParallel: true,
