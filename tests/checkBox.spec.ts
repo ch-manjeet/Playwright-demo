@@ -1,4 +1,4 @@
-// select a check box and verify it is checked or not
+// 1. select a check box and verify it is checked or not
 
 import { test, expect, Locator } from '@playwright/test';
 
@@ -12,7 +12,7 @@ test('Check box actions', async ({ page }) => {
 
 
 
-    // capture all the checkboxes or days of the week
+    // 2. capture all the checkboxes or days of the week
     // first keep all the labels /days in an array 
     // then using map return checkbox of every label and store them in a an array
      const days:string[]=['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
