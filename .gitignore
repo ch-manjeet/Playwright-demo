@@ -28,6 +28,9 @@ logs/
 .env
 .env.local
 .env.*.local
+.env.staging
+.env.production
+
 
 # OS files
 .DS_Store

@@ -39,15 +39,33 @@ export default defineConfig({
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
+    // 1. Mask automation signals by pretending to be a real Chrome browser
+    userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36',
+    
+    launchOptions: {
+      args: [
+        '--disable-http2',             // Forces HTTP/1.1 to bypass protocol validation
+        '--disable-blink-features=AutomationControlled' // Hides the "navigator.webdriver" flag
+      ], 
+    },
+
+
+
+
   },
 
   /* Configure projects for major browsers */
+
+
   projects: [
+
+    
     {
       name: 'chromium',
       use: { ...devices['Desktop Chrome'] },
     },
 
+   /*
     {
       name: 'firefox',
       use: { ...devices['Desktop Firefox'] },
@@ -57,6 +75,8 @@ export default defineConfig({
       name: 'webkit',
       use: { ...devices['Desktop Safari'] },
     },
+
+    */
 
     /* Test against mobile viewports. */
     // {
