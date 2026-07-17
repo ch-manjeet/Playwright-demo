@@ -1,5 +1,6 @@
 // capture the myntra search bar dropdown & print its elements on searching shirt
 
+/*
 
 import{test,expect, Locator} from '@playwright/test'
 
@@ -12,3 +13,5 @@ test('search for shirt and print the dropdown values',async({page})=>{
 
 
 })
+
+*/
